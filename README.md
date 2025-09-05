@@ -67,7 +67,7 @@ AUTO/
 ## 🚀 Getting Started
 1. Clone the repo:
    ```bash
-   git clone https://github.com/YOUR-USERNAME/AUTO.git
+   git clone https://github.com/ThePostleEffect/AUTO.git
 
 
 Navigate to the project:
