@@ -1,103 +1,92 @@
-🎯 Purpose
+# Social Tables & Critical Thinking Picker (AUTO)
 
-The Social Hall is AUTO’s casual but purposeful community space. Instead of random chatrooms, users join Tables — small groups designed for conversation, debate, and problem-solving. It blends the fun of hanging out with the challenge of exercising your mind.
+The **Social Hall** is AUTO’s interactive community space. Instead of free-for-all chatrooms, users join **Tables** — virtual library-style hangout spots where conversation and problem-solving blend into an engaging, educational experience.
 
-🪑 Tables
+---
 
-Each Table = a virtual “library table” (chat + optional voice/video).
+## 🎯 Purpose
+- Create a social hub that is casual but purposeful.  
+- Encourage critical thinking and teamwork in small groups.  
+- Gamify learning with challenges that reward collaboration.
 
-Anyone can join, but each Table has a max size (e.g., 6–8 people).
+---
 
-Tables are topic-neutral until activated. Conversation can be casual, but the design nudges toward learning.
+## 🪑 Tables
+- Each **Table** = a small group chat (with optional voice/video).  
+- Tables have a **maximum size** (6–8 people recommended).  
+- Open to all, but only become “active” for challenges once **4+ users** are seated.  
+- Everyday conversation is welcome, but the design nudges toward **enriching dialogue**.
 
-🧠 Crit Think Picker
+---
 
-Once a Table has 4+ participants, anyone can trigger the Crit Think Picker.
+## 🧠 Crit Think Picker
+- When a Table has **4 or more participants**, the **Crit Think Picker** can be triggered.  
+- Picker presents a **challenge prompt** (logic puzzle, ethical dilemma, scenario-solving exercise, etc.).  
+- A **timer starts** (e.g., 10–15 minutes).  
+- Users must collaborate to solve the problem before the timer expires.
 
-Picker presents a prompt/challenge (could be logic puzzles, ethical dilemmas, science/tech questions, scenario-solving).
+---
 
-A timer starts (e.g., 10–15 minutes).
+## 🎮 Outcomes & Rewards
+- **Victory** → group solves the challenge before time runs out.  
+  - All participants earn **points/credits**.  
+  - Credits can be spent on:  
+    - cosmetic upgrades (skins, notebook covers, avatars)  
+    - gifting to Scholars or peers  
+    - access to bonus features.  
+- **Defeat** → timer ends with no solution.  
+  - No credits awarded.  
+  - Users can try again with a new challenge.  
 
-The group must collaborate to find a solution before time runs out.
+---
 
-🎮 Win / Lose State
+## ⚖️ Culture
+- Social Hall = a place to hang out, laugh, and chat.  
+- But the **purpose is enrichment** — every Table is designed to encourage **critical thinking, creativity, and teamwork**.  
+- The Crit Think Picker transforms casual talk into **mini learning games** that reward effort and insight.
 
-Victory (solution found before time) →
+---
 
-Table receives points/credits.
+## 🛠 Technical Sketch
+**Frontend (Next.js + Tailwind)**  
+- Lobby page listing available Tables.  
+- Join button → brings user into Table (chat + voice/video).  
+- Crit Think Picker button (active if 4+ users).  
+- Timer UI displayed once challenge starts.  
 
-Credits can be used for fun:
+**Backend (Supabase or Node/Express)**  
+- `tables` → manages active rooms.  
+- `table_participants` → tracks who is at each Table.  
+- `crit_think_sessions` → stores challenges, timers, outcomes.  
+- `rewards` → records credits earned.  
 
-cosmetic upgrades (skins, notebook covers, custom avatars)
+**Realtime (Socket.io or Supabase Realtime)**  
+- Sync chat, table membership, challenge prompts, and timers live across all participants.  
 
-gifting to Scholars or peers
+---
 
-access to bonus features.
+## 📊 Data Model (Simplified)
 
-Defeat (time expires) → no reward, but users can try again.
+**tables**  
+- `id`, `title`, `max_participants`, `created_at`
 
-⚖️ Culture
+**table_participants**  
+- `id`, `table_id`, `user_id`, `joined_at`
 
-“Bullshitting around” is fine in Social Hall, but the purpose is enrichment.
+**crit_think_sessions**  
+- `id`, `table_id`, `prompt_id`, `started_at`, `ends_at`, `status (active|won|lost)`
 
-AUTO ensures that even fun conversations lean toward critical thinking, problem-solving, and learning.
+**rewards**  
+- `id`, `user_id`, `session_id`, `credits`, `created_at`
 
-The Crit Think Picker acts as the engine that transforms casual chats into learning games.
+---
 
-🛠️ Technical Sketch
+## 🔮 Future Add-ons
+- **Leaderboard** → top critical thinkers and teams.  
+- **Badges** → awarded for streaks, creativity, or unique problem types.  
+- **Scholar Challenges** → Scholars can inject custom prompts for bonus rewards.  
 
-Frontend (Next.js + Tailwind)
+---
 
-Lobby → list of Tables.
-
-Join button → Table chat/voice view.
-
-Crit Think Picker button (visible only if 4+ users).
-
-Timer countdown UI.
-
-Backend (Supabase or Node/Express)
-
-tables table (id, participants, status).
-
-crit_think_sessions (id, table_id, prompt_id, started_at, ends_at, outcome).
-
-rewards (user_id, session_id, credits).
-
-Realtime (Socket.io/Supabase Realtime)
-
-Sync chat, table membership, timers, victory state across all users live.
-
-📊 Data Model (simplified)
-
-tables
-
-id, title, max_participants, created_at
-
-table_participants
-
-id, table_id, user_id, joined_at
-
-crit_think_sessions
-
-id, table_id, prompt_id, started_at, ends_at, status (active|won|lost)
-
-rewards
-
-id, user_id, session_id, credits, created_at
-
-🔮 Future Add-ons
-
-Leaderboard → show top thinkers/teams.
-
-Badges → earned for streaks, unique problem types, or creativity.
-
-Scholar-created prompts → Scholars can drop in challenges for bonus credit.
-
-👉 Here’s what I’d suggest for your next commit workflow:
-
-Add a short section in README called Social Hall & Tables with a 2–3 sentence description + link.
-
-Create a file docs/social-tables.md with this full spec.
-
-(Optional) Add a ROADMAP.md update showing v1 = tables + chat, v2 = Crit Think Picker, v3 = rewards/credits.
+## ✅ Summary
+The Social Hall and Crit Think Picker give AUTO its **heartbeat**. They make learning social, fun, and challenging — blending casual conversation with structured problem-solving. By rewarding collaboration, AUTO turns critical thinking into a game that is both enriching and addictive.
