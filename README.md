@@ -20,6 +20,15 @@ AUTO is an open initiative built for self learners, builders, and creators who b
 ## 🌍 Vision
 We live in a time of accelerating technology and global change. AUTO exists to ensure that anyone with curiosity and drive has access to knowledge and opportunities — without needing permission from institutions, gatekeepers, or outdated systems.
 
+### Raise Hand (Live + Async)
+
+AUTO’s “Raise Hand” system is designed to make live learning sessions fair and manageable.  
+Instead of chaotic chat, users tap **Raise Hand** to enter a queue. The Scholar presses  
+**Pick Question** to randomly select a participant with a timer. A cooldown prevents spam,  
+and users can choose **Keep Hand Raised** to leave questions for async answers later.  
+
+➡️ See full spec in [`docs/raise-hand.md`](docs/raise-hand.md).
+
 ---
 
 ## 🎯 Mission
