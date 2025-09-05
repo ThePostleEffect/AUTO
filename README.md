@@ -20,6 +20,8 @@ AUTO is an open initiative built for self learners, builders, and creators who b
 ## 🌍 Vision
 We live in a time of accelerating technology and global change. AUTO exists to ensure that anyone with curiosity and drive has access to knowledge and opportunities — without needing permission from institutions, gatekeepers, or outdated systems.
 
+---
+
 ### Raise Hand (Live + Async)
 
 AUTO’s “Raise Hand” system is designed to make live learning sessions fair and manageable.  
@@ -28,6 +30,14 @@ Instead of chaotic chat, users tap **Raise Hand** to enter a queue. The Scholar 
 and users can choose **Keep Hand Raised** to leave questions for async answers later.  
 
 ➡️ See full spec in [`docs/raise-hand.md`](docs/raise-hand.md).
+
+---
+
+### Social Tables & Crit Think Picker
+AUTO’s Social Hall lets learners join small “Tables” for casual but enriching conversation.  
+Once a Table has 4+ people, they can activate the **Crit Think Picker**, a timed challenge that rewards teamwork and problem-solving with credits.  
+➡️ See full spec in [`docs/social-tables.md`](docs/social-tables.md).
+
 
 ---
 
